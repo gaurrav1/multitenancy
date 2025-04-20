@@ -1,17 +1,17 @@
 package com.multitenacydemo.config;
 
 public class TenantContext {
-	private static final ThreadLocal<String> currentTenant = new ThreadLocal<>();
+    private static final ThreadLocal<String> currentTenant = new ThreadLocal<>();
 
-	public static String getCurrentTenant() {
-		return currentTenant.get();
-	}
+    public static void setTenantId(String tenantId) {
+        currentTenant.set(tenantId);
+    }
 
-	public static void setCurrentTenant(String tenant) {
-		currentTenant.set(tenant);
-	}
+    public static String getTenantId() {
+        return currentTenant.get();
+    }
 
-	public static void clear() {
-		currentTenant.remove();
-	}
+    public static void clear() {
+        currentTenant.remove();
+    }
 }

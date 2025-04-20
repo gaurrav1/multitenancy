@@ -1,10 +1,8 @@
 package com.multitenacydemo.repo;
 
-import com.multitenacydemo.model.User;
+import com.multitenacydemo.entity.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-
 @Repository
-public interface UserRepo extends JpaRepository<User, String> {
-}
+public interface UserRepository extends JpaRepository<User, Long> {}
